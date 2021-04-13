@@ -20,17 +20,7 @@ class Content extends Component {
          address: '',
          postalCode: '',
        },
-       workExperience: [
-         {
-            id: Date.now().toString(),
-            jobTitle: '',
-            employer: '',
-            startDate: '',
-            endDate: '',
-            city:'',
-            description: '',
-          },
-        ],  
+       workExperience: [],  
       }
     }
   
@@ -43,29 +33,37 @@ class Content extends Component {
     }, () => console.log(this.state.personalDetails))
   }
 
-  handleExperienceDetailsChange = () => {
-    //TO DO
+  handleWorkExperienceChange = (input, id, event) => {
+    const workExperienceCopy = this.state.workExperience;
+    const workExperienceItem = workExperienceCopy.find((item) => item.id === id);
+    workExperienceItem[input] = event.target.value;
+    this.setState({
+      workExperience: workExperienceCopy,
+    })
   }
 
   handleAddWorkExperience = (e) => {
     this.setState((prevState) => ({
-      workExperience: [...prevState.workExperience, {
+      workExperience: [{
         id: Date.now().toString(),
         jobTitle: '',
         employer: '',
         startDate: '',
         endDate: '',
         city:'',
+        country:'',
         description: '',
-      }],
+      }, ...prevState.workExperience],
     }))
   }
 
-  handleDeleteExperienceDetails = () => {
-    //TO DO
+  handleDeleteWorkExperience = (id) => {
+    const workExperienceCopy = this.state.workExperience;
+    const filteredWorkExperience = workExperienceCopy.filter((item) => item.id !== id);
+    this.setState({
+      workExperience: filteredWorkExperience,
+    })
   }
-
-
   
   render() {
     return (
@@ -75,6 +73,8 @@ class Content extends Component {
           personalDetails={this.state.personalDetails}
           workExperience={this.state.workExperience}
           handleAddWorkExperience={this.handleAddWorkExperience}
+          handleWorkExperienceChange={this.handleWorkExperienceChange}
+          handleDeleteWorkExperience={this.handleDeleteWorkExperience}
         />
         <PreviewContainer personalDetails={this.state.personalDetails} />
       </div>

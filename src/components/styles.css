@@ -5,18 +5,17 @@
   }
 
 body {
-  width: 100%;
-  height: 100%;
   background-color: #FCF9F2;
 }
 
 .content-container {
   display: grid;
   grid-auto-flow: column;
+  gap: 0;
 }
 
 .forms-container {
-  width: 500px;
+  width: calc(100vw - 216mm);
 }
 
 .cv-page {
@@ -74,5 +73,34 @@ body {
 }
 
 .input-category-heading {
+  text-align: left;
+  padding: 10px;
+}
+
+.work-experience-item-container {
+  padding: 10px 10px;
+}
+
+.work-experience-item-input-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.work-experience-item-input-container > div {
+  display: grid;
+  grid-auto-flow: row;
+  padding: 5px 10px;
+}
+.work-experience-item-input-container > .description-input {
+  grid-column: 1 / 3;
+}
+
+.job-title-heading {
   text-align: center;
+  color: grey;
+}
+
+.work-experience-heading-container {
+  display: grid;
+  grid-auto-flow: column;
 }

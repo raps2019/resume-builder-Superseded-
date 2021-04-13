@@ -12,64 +12,92 @@ class WorkExperience extends Component {
 
   render() {
   
-  const {workExperience, handleAddWorkExperience} = this.props;
+  const {
+    workExperience, 
+    handleAddWorkExperience, 
+    handleWorkExperienceChange,
+    handleDeleteWorkExperience,
+  } = this.props;
 
   console.log(workExperience)
 
   const workExperienceList = workExperience.map((item) => 
 
-    <div key={item.id}>
-      <div>
-        <label>Job Title</label>
-        <input
-          type='text'
-          value={item.jobTitle}>
-        </input>
-      </div>
-      <div>
-        <label>Employer</label>
-        <input
-          type='text'
-          value={item.employer}>
-        </input>
-      </div>
-      <div>
-        <label>Start Date</label>
-        <input
-          type='date'
-          value={item.startDate}>
-        </input>
-      </div>
-      <div>
-        <label>End Date</label>
-        <input
-          type='date'
-          value={item.endDate}>
-        </input>
-      </div>
-      <div>
-        <label>City</label>
-        <input
-          type='text'
-          value={item.city}>
-        </input>
-      </div>
-      <div>
-        <label>Description</label>
-        <textarea
-          type='text'
-          value={item.description}>
-        </textarea>
+    <div key={item.id} className='work-experience-item-container'>
+      {(item.employer && item.jobTitle ? <h4 className='job-title-heading'>{item.employer} - {item.jobTitle}</h4> : null)}
+      <div className='work-experience-item-input-container'> 
+        <div>
+          <label>Job Title</label>
+          <input
+            type='text'
+            value={item.jobTitle}
+            onChange={(e) => handleWorkExperienceChange('jobTitle', item.id, e)}>
+          </input>
+        </div>
+        <div>
+          <label>Employer</label>
+          <input
+            type='text'
+            value={item.employer}
+            onChange={(e) => handleWorkExperienceChange('employer', item.id, e)}>
+          </input>
+        </div>
+        <div>
+          <label>Start Date</label>
+          <input
+            type='date'
+            value={item.startDate}
+            onChange={(e) => handleWorkExperienceChange('startDate', item.id, e)}>
+          </input>
+        </div>
+        <div>
+          <label>End Date</label>
+          <input
+            type='date'
+            value={item.endDate}
+            onChange={(e) => handleWorkExperienceChange('endDate', item.id, e)}>
+          </input>
+        </div>
+        <div>
+          <label>City</label>
+          <input
+            type='text'
+            value={item.city}
+            onChange={(e) => handleWorkExperienceChange('city', item.id, e)}>
+          </input>
+        </div>
+        <div>
+          <label>Country</label>
+          <input
+            type='text'
+            value={item.country}
+            onChange={(e) => handleWorkExperienceChange('country', item.id, e)}>
+          </input>
+        </div>
+        <div className="description-input">
+          <label>Description</label>
+          <textarea
+            type='text'
+            value={item.description}
+            onChange={(e) => handleWorkExperienceChange('description', item.id, e)}>
+          </textarea>
+        </div>
+        <button onClick={() => handleDeleteWorkExperience(item.id)}>Delete</button>
       </div>
     </div>
   )
 
     return (
       <div>
-        <div>
-         <button onClick={handleAddWorkExperience}>Add Work Experience</button>
+        <div className="work-experience-input-container">
+          <div className='work-experience-heading-container'>
+            <h3 className="input-category-heading">Work Experience</h3>
+            <button onClick={handleAddWorkExperience}>Add Work Experience</button>
+          </div>
+          <div>
+            {workExperienceList}
+          </div>
         </div>
-        {workExperienceList}
       </div>
     )
   }

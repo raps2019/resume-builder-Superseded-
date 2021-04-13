@@ -21,6 +21,8 @@ class FormsContainer extends Component {
         <WorkExperience 
           workExperience={this.props.workExperience}
           handleAddWorkExperience={this.props.handleAddWorkExperience} 
+          handleWorkExperienceChange={this.props.handleWorkExperienceChange}
+          handleDeleteWorkExperience={this.props.handleDeleteWorkExperience}
         />
       </div>
     )
