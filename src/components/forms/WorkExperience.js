@@ -89,14 +89,12 @@ class WorkExperience extends Component {
 
     return (
       <div>
-        <div className="work-experience-input-container">
-          <div className='work-experience-heading-container'>
-            <h3 className="input-category-heading">Work Experience</h3>
-            <button onClick={handleAddWorkExperience}>Add Work Experience</button>
-          </div>
-          <div>
-            {workExperienceList}
-          </div>
+        <h3 className="heading">Work Experience</h3>
+        <div className="container__button">
+          <button onClick={handleAddWorkExperience} className="button button--add">Add Work Experience</button>
+        </div>
+        <div>
+          {workExperienceList}
         </div>
       </div>
     )

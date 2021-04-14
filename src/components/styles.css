@@ -66,7 +66,32 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
   padding: 20px 0px;
 }
 
+.container__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.button {
+   padding:0.3em 1.2em;
+   border-radius:0.2em;
+   font-weight:300;
+   color:#FFFFFF;
+   text-align:center;
+   transition: all 0.2s;
+  }
+
+  .button:hover{
+    background-color: var(--primary);
+  }
+
+  .button--add {
+    background-color :rgb(60, 60, 60);
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+  }
 
 
 
@@ -147,7 +172,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
   font-size: 0.75em;
 } */
 
-.input-category-heading {
+/* .input-category-heading {
   text-align: left;
   padding: 10px;
 }
@@ -174,8 +199,4 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
   text-align: center;
   color: grey;
 }
-
-.work-experience-heading-container {
-  display: grid;
-  grid-auto-flow: column;
-}
+ */
