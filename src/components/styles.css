@@ -1,12 +1,87 @@
-* {
+html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button 
+ {
   margin: 0;
   padding: 0;
+  border: none;
+  list-style: none;
   font-family: 'Lato', sans-serif;
   }
 
-body {
-  background-color: #FCF9F2;
+:root {
+  --primary: #ff5900;
+  --dark: #000;
+  --light: rgb(201, 201, 201);
 }
+
+.container__input {
+  position: relative;
+}
+
+.input {
+  margin: auto;
+  font-size: 1em;
+  padding: 10px 10px 10px 5px;
+  width: 250px;
+  border-bottom: 1px solid var(--dark);
+}
+
+.input:focus {
+  outline: none;
+}
+
+.label {
+  position: absolute;
+  font-size: 1em;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  color: var(--light);
+}
+
+.input:focus + .label, .input:valid + .label {
+  top: -10px;
+  font-size: 0.75em;
+  color: var(--primary);
+}
+
+.input:focus {
+  border-bottom: 1px solid var(--primary);
+}
+
+.grid {
+  display: grid;
+}
+
+.grid--form {
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.heading {
+  text-align: center;
+  padding: 20px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Old Naming below */
+
 
 .content-container {
   display: grid;
@@ -53,7 +128,7 @@ body {
   text-align: right;
 }
 
-.personal-details-input-container {
+/* .personal-details-input-container {
   display: grid;
   grid-template-columns: 50% 50%;
 }
@@ -62,15 +137,15 @@ body {
   display: grid;
   grid-auto-flow: row;
   padding: 5px 10px;
-}
+} */
 
-.personal-details-input-container > input {
+/* .personal-details-input-container > input {
   width: 100%;
-}
+} */
 
-* > label {
+/* * > label {
   font-size: 0.75em;
-}
+} */
 
 .input-category-heading {
   text-align: left;
