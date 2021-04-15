@@ -46,6 +46,7 @@ class Content extends Component {
     this.setState((prevState) => ({
       workExperience: [{
         id: Date.now().toString(),
+        show: true,
         jobTitle: '',
         employer: '',
         startDate: '',
@@ -64,6 +65,15 @@ class Content extends Component {
       workExperience: filteredWorkExperience,
     })
   }
+
+  handleShowWorkExperience = (id) => {
+    const workExperienceCopy = this.state.workExperience;
+    const workExperienceItem = workExperienceCopy.find((item) => item.id === id)
+    workExperienceItem.show = !workExperienceItem.show
+    this.setState({
+      workExperience: workExperienceCopy,
+    }, () => console.log(this.state.workExperience))
+  }
   
   render() {
     return (
@@ -75,6 +85,7 @@ class Content extends Component {
           handleAddWorkExperience={this.handleAddWorkExperience}
           handleWorkExperienceChange={this.handleWorkExperienceChange}
           handleDeleteWorkExperience={this.handleDeleteWorkExperience}
+          handleShowWorkExperience={this.handleShowWorkExperience}
         />
         <PreviewContainer personalDetails={this.state.personalDetails} />
       </div>

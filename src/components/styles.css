@@ -7,63 +7,125 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
   font-family: 'Lato', sans-serif;
   }
 
+
+
 :root {
   --primary: #ff5900;
   --dark: #000;
   --light: rgb(201, 201, 201);
 }
 
+.container__form {
+  margin: 0px 20px 30px 20px;
+}
+
+.container__form--work-experience {
+  border: 1px solid black;
+  border-radius: 5px;
+
+}
+
 .container__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
   position: relative;
 }
 
+.container__input--textarea {
+  grid-column: 1 / 3;
+  margin-top: 20px;
+}
+
 .input {
-  margin: auto;
-  font-size: 1em;
-  padding: 10px 10px 10px 5px;
-  width: 250px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 0.8em;
+  padding: 7px 10px;
   border-bottom: 1px solid var(--dark);
 }
 
-.input:focus {
+.input,.button:focus {
   outline: none;
 }
 
-.label {
+.input__label {
   position: absolute;
-  font-size: 1em;
+  font-size: 0.8em;
   pointer-events: none;
-  left: 5px;
+  left: 30px;
   top: 10px;
   transition: 0.2s ease all;
   color: var(--light);
 }
 
-.input:focus + .label, .input:valid + .label {
-  top: -10px;
-  font-size: 0.75em;
+.input:focus + .input__label, .input:valid + .input__label {
+  top: -8px;
+  font-size: 0.6em;
   color: var(--primary);
+}
+
+.input--textarea:focus + .input__label, .input--textarea:focus + .input__label {
+  top: -15px;
 }
 
 .input:focus {
   border-bottom: 1px solid var(--primary);
 }
 
+.input--textarea {
+  transition: 0.2s ease all;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.input--textarea:focus, .input--textarea:hover {
+  border: 1px solid var(--primary);
+  height: 150px;
+}
+
+/* Hide the date picker yyyy-mm-dd to show label when not in focus */
+::-webkit-datetime-edit { color: transparent; }
+:focus::-webkit-datetime-edit { color: #000; }
+
 .grid {
   display: grid;
 }
 
 .grid--form {
+  box-sizing: border-box;
   grid-template-columns: 1fr 1fr;
-  grid-row-gap: 20px;
+  grid-row-gap: 10px;
   grid-column-gap: 20px;
   justify-items: center;
   align-items: center;
 }
 
-.heading {
+.grid--work-experience-heading {
+  grid-template-columns: 3fr 1fr;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  align-items: center;
+  transition: all ease-in-out .3s;
+}
+
+.grid--work-experience-heading--minimized {
+  margin: 5px 5px 5px 20px;
+}
+
+.heading1 {
   text-align: center;
   padding: 20px 0px;
+  font-size: 1em;
+}
+
+.heading2 {
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.heading2--transparent {
+  color: transparent;
 }
 
 .container__button {
@@ -79,6 +141,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
    color:#FFFFFF;
    text-align:center;
    transition: all 0.2s;
+   height: 25px;
   }
 
   .button:hover{
@@ -88,9 +151,22 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
   .button--add {
     background-color :rgb(60, 60, 60);
     align-items: center;
-    justify-content: center;
     justify-self: center;
-    justify-items: center;
+    margin-bottom: 30px;
+  }
+
+  .button--delete {
+    background-color :rgb(60, 60, 60);
+    grid-column: 1 / 3;
+    margin: 10px 0;
+  }
+
+  .button--toggle-show--maximize {
+    background-color :rgb(60, 60, 60);
+  }
+
+  .button--toggle-show--minimize {
+    background-color :rgb(60, 60, 60);
   }
 
 

@@ -14,8 +14,8 @@ class PersonalDetails extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="heading">Personal Details</h3>
+      <div className='container__form'>
+        <h1 className="heading1">Personal Details</h1>
         <form className="grid grid--form">
           <div className='container__input'>
             <input 
@@ -25,7 +25,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('firstName',e)}
               required>
             </input>
-            <label className='label'>First Name</label>
+            <label className='input__label'>First Name</label>
           </div>
           <div className='container__input'>
             <input 
@@ -35,7 +35,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('lastName',e)}
               required>
               </input>
-            <label className='label'>Last Name</label>
+            <label className='input__label'>Last Name</label>
           </div>
           <div className='container__input'>
             <input 
@@ -45,7 +45,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('jobTitle',e)}
               required>
             </input>
-            <label className='label'>Job Title</label>
+            <label className='input__label'>Job Title</label>
           </div>
           <div className='container__input'>
             <input 
@@ -55,7 +55,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('email',e)}
               required>
             </input>
-            <label className='label'>Email</label>
+            <label className='input__label'>Email</label>
           </div>
           <div className='container__input'>
             <input 
@@ -65,7 +65,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('phone',e)}
               required>
             </input>
-            <label className='label'>Phone</label>
+            <label className='input__label'>Phone</label>
           </div>
           <div className='container__input'>
             <input 
@@ -75,7 +75,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('country',e)}
               required>
             </input>
-            <label className='label'>Country</label>
+            <label className='input__label'>Country</label>
           </div>
           <div className='container__input'>
             <input 
@@ -85,7 +85,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('city',e)}
               required>
             </input>
-            <label className='label'>City</label>
+            <label className='input__label'>City</label>
           </div>
           <div className='container__input'>
             <input 
@@ -95,7 +95,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('address',e)}
               required>
             </input>
-            <label className='label'>Address</label>
+            <label className='input__label'>Address</label>
           </div>
           <div className='container__input'>
             <input 
@@ -105,7 +105,7 @@ class PersonalDetails extends Component {
               onChange={(e) => this.props.handlePersonalDetailsChange('postalCode',e)}
               required>
             </input>
-            <label className='label'>Postal Code</label>
+            <label className='input__label'>Postal Code</label>
           </div>
         </form>
       </div>
