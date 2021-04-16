@@ -14,7 +14,7 @@ class PersonalDetails extends Component {
 
   render() {
     return (
-      <div className='container__form'>
+      <div className='container__category container__category--personal'>
         <h1 className="heading1">Personal Details</h1>
         <form className="grid grid--form">
           <div className='container__input'>

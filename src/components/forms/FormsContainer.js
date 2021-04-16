@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Education from './Education'
 import PersonalDetails from './PersonalDetails'
 import WorkExperience from './WorkExperience'
 
@@ -24,6 +25,13 @@ class FormsContainer extends Component {
           handleWorkExperienceChange={this.props.handleWorkExperienceChange}
           handleDeleteWorkExperience={this.props.handleDeleteWorkExperience}
           handleShowWorkExperience={this.props.handleShowWorkExperience}
+        />
+        <Education 
+          education={this.props.education}
+          handleEducationChange={this.props.handleEducationChange}
+          handleAddEducation={this.props.handleAddEducation}
+          handleDeleteEducation={this.props.handleDeleteEducation}
+          handleShowEducation={this.props.handleShowEducation}
         />
       </div>
     )

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import FormContainer from './forms/FormsContainer'
+import FormsContainer from './forms/FormsContainer'
 import PreviewContainer from './preview/PreviewContainer'
 import './styles.css'
 
-class Content extends Component {
+class Main extends Component {
 
   constructor(props) {
     super(props)
@@ -21,9 +21,11 @@ class Content extends Component {
          postalCode: '',
        },
        workExperience: [],  
+       education: [],
       }
     }
   
+//Handlers for Personal Details Form
 
   handlePersonalDetailsChange = (input, event) => {
     const personalDetailsCopy =  this.state.personalDetails;
@@ -32,6 +34,8 @@ class Content extends Component {
      personalDetails: personalDetailsCopy,
     }, () => console.log(this.state.personalDetails))
   }
+
+  //Handlers for Work Experience Form
 
   handleWorkExperienceChange = (input, id, event) => {
     const workExperienceCopy = this.state.workExperience;
@@ -74,11 +78,56 @@ class Content extends Component {
       workExperience: workExperienceCopy,
     }, () => console.log(this.state.workExperience))
   }
+
+  //Handlers for Eductation Details Form
+  handleEducationChange = (input, id, event) => {
+    const educationCopy = this.state.education;
+    const educationItem = educationCopy.find((item) => item.id === id);
+    educationItem[input] = event.target.value;
+    this.setState({
+      education: educationCopy,
+    })
+  }
+
+  handleAddEducation = (e) => {
+    this.setState((prevState) => ({
+      education: [{
+        id: Date.now().toString(),
+        show: true,
+        school: '',
+        degree: '',
+        startDate: '',
+        endDate: '',
+        city:'',
+        country:'',
+        description: '',
+      }, ...prevState.education],
+    }))
+  }
+
+  handleDeleteEducation = (id) => {
+    console.log('handleDeleteEducation')
+    const educationCopy = this.state.education;
+    const filteredEducation = educationCopy.filter(item => item.id !== id);
+    this.setState({
+      education: filteredEducation,
+    })
+  }
+
+  handleShowEducation = (id) => {
+    console.log('handleShowEducation')
+    const educationCopy = this.state.education;
+    const educationItem = educationCopy.find((item) => item.id === id);
+    educationItem.show = !educationItem.show
+    this.setState({
+      education: educationCopy,
+    })
+  }
   
   render() {
     return (
       <div className="content-container">
-        <FormContainer 
+        <FormsContainer 
           handlePersonalDetailsChange={this.handlePersonalDetailsChange} 
           personalDetails={this.state.personalDetails}
           workExperience={this.state.workExperience}
@@ -86,6 +135,11 @@ class Content extends Component {
           handleWorkExperienceChange={this.handleWorkExperienceChange}
           handleDeleteWorkExperience={this.handleDeleteWorkExperience}
           handleShowWorkExperience={this.handleShowWorkExperience}
+          education={this.state.education}
+          handleEducationChange={this.handleEducationChange}
+          handleAddEducation={this.handleAddEducation}
+          handleDeleteEducation={this.handleDeleteEducation}
+          handleShowEducation={this.handleShowEducation}
         />
         <PreviewContainer personalDetails={this.state.personalDetails} />
       </div>
@@ -93,4 +147,4 @@ class Content extends Component {
   }
 }
 
-export default Content
+export default Main
