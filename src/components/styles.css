@@ -24,7 +24,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
 .container__form {
   /* padding: 15px 15px 25px 15px; */
   /* margin: 20px 20px 10px 20px; */
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   background-color: var(--form-color);
 }
@@ -137,6 +137,10 @@ html, body, div, h1, h2, h3, h4, h5, h6, p, input, label, button
 
 .container__category--work-experience {
   background-color: var(--category-color);
+}
+
+.container__category--personal {
+  background-color: var(--form-color);
 }
 
 .heading1 {

@@ -1,27 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class WorkExperience extends Component {
+function WorkExperience(props) {
 
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       
-    }
-  }
-
-  render() {
-  
   const {
     workExperience, 
     handleAddWorkExperience, 
     handleWorkExperienceChange,
     handleDeleteWorkExperience,
     handleShowWorkExperience,
-  } = this.props;
+  } = props;
 
   const workExperienceList = workExperience.map((item) => 
-
   item.show === true ?  
     (<div key={item.id} className='container__form container__form--category'>
       <div className='grid grid--category-heading grid--category-heading--maximized'>
@@ -109,10 +98,11 @@ class WorkExperience extends Component {
         </div>
       </div>)
     )
-  
-    
-      return (
-      <div className='container__category container__category--work-experience'>
+
+
+  return (
+    <div>
+         <div className='container__category container__category--work-experience'>
         <h1 className="heading1">Work Experience</h1>
         <div className="container__button">
           <button onClick={handleAddWorkExperience} className="button button--add">Add Work Experience</button>
@@ -121,8 +111,9 @@ class WorkExperience extends Component {
           {workExperienceList}
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default WorkExperience
+
