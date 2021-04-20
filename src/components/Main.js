@@ -61,7 +61,7 @@ class Main extends Component {
         city:'',
         country:'',
         description: '',
-      }, ...prevState.workExperience.sort((a, b) => (new Date(b.startDate)) - (new Date(a.startDate)))],
+      }, ...prevState.workExperience.sort((a, b) => new Date(b.endDate) - new Date(a.endDate))],
     }))
   }
 
@@ -104,7 +104,7 @@ class Main extends Component {
         city:'',
         country:'',
         description: '',
-      }, ...prevState.education],
+      }, ...prevState.education.sort((a, b) => new Date(b.endDate) - new Date(a.endDate))],
     }))
   }
 

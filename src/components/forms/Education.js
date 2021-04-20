@@ -15,7 +15,7 @@ const educationList = education.map((item) =>
 item.show === true ?  
   (<div key={item.id} className='container__form container__form--category'>
     <div className='grid grid--category-heading grid--category-heading--maximized'>
-      <h2 className='heading2'>{item.school && item.degree ? `${item.degree} (${item.school})` : `Enter Education Details`} </h2>
+      <h2 className='heading2'>{item.school && item.degree ? `${item.degree} at ${item.school}` : `Enter Education Details`} </h2>
       <button className='button button__hide-details' onClick={()=>{handleShowEducation(item.id)}}>Hide Details</button>
     </div>
     <div className='grid grid--form'> 
@@ -94,7 +94,7 @@ item.show === true ?
   </div>) :
    (<div key={item.id} className='container__form container__form--category'>
       <div className='grid grid--category-heading grid--category-heading--minimized'>
-        <h2 className='heading2'>{item.school && item.degree ? `${item.degree} (${item.school})` : `Enter Education Details`} </h2>
+        <h2 className='heading2'>{item.school && item.degree ? `${item.degree} at ${item.school}` : `Enter Education Details`} </h2>
         <button className='button button__show-details' onClick={()=>{handleShowEducation(item.id)}}>Show Details</button>
       </div>
     </div>)

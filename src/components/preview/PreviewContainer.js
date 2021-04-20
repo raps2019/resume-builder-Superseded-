@@ -12,7 +12,6 @@ function PreviewContainer(props) {
       <CvHeader personalDetails={props.personalDetails} />
       <CvWorkExperience workExperience={props.workExperience} />
       <CvEducation education={props.education} />
-
     </div>
   )
 }
