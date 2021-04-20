@@ -5,7 +5,7 @@ import WorkExperience from './WorkExperience'
 
 function FormsContainer(props) {
   return (
-    <div className="forms-container">
+    <div className="container__forms">
       <PersonalDetails 
         personalDetails={props.personalDetails}         
         handlePersonalDetailsChange={props.handlePersonalDetailsChange} 

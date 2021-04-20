@@ -14,7 +14,7 @@ function WorkExperience(props) {
   item.show === true ?  
     (<div key={item.id} className='container__form container__form--category'>
       <div className='grid grid--category-heading grid--category-heading--maximized'>
-        <h2 className='heading2'>{item.employer && item.jobTitle ? `${item.jobTitle} (${item.employer})` : `Enter Work Experience Details`} </h2>
+        <h2 className='heading2'>{item.employer && item.jobTitle ? `${item.jobTitle}  at ${item.employer}` : `Enter Work Experience Details`} </h2>
         <button className='button button__hide-details' onClick={()=>{handleShowWorkExperience(item.id)}}>Hide Details</button>
       </div>
       <div className='grid grid--form'> 
@@ -93,7 +93,7 @@ function WorkExperience(props) {
     </div>) :
      (<div key={item.id} className='container__form container__form--category'>
         <div className='grid grid--category-heading grid--category-heading--minimized'>
-          <h2 className='heading2'>{item.employer && item.jobTitle ? `${item.jobTitle} (${item.employer})` : `Enter Work Experience Details`} </h2>
+          <h2 className='heading2'>{item.employer && item.jobTitle ? `${item.jobTitle} at ${item.employer}` : `Enter Work Experience Details`} </h2>
           <button className='button button__show-details' onClick={()=>{handleShowWorkExperience(item.id)}}>Show Details</button>
         </div>
       </div>)

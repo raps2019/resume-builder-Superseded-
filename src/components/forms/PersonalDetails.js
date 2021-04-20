@@ -37,7 +37,7 @@ function PersonalDetails(props) {
           </div>
           <div className='container__input'>
             <input 
-              type='email' 
+              type='text' 
               className='input'
               value={props.email} 
               onChange={(e) => props.handlePersonalDetailsChange('email',e)}

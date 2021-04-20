@@ -18,12 +18,12 @@ function CvHeader(props) {
   }
 
   return (
-      <div className="cv-header-container">
-        <div className="cv-name-container">
-          <h2 className='cv-name-text'>{personalDetails.firstName.toUpperCase()}</h2>
-          {(personalDetails.lastName? <h2 className='cv-name-text'>{personalDetails.lastName.toUpperCase()}</h2> : null)}
+      <div className="cv__header">
+        <div className="cv__name">
+          <h2>{personalDetails.firstName.toUpperCase()}</h2>
+          {(personalDetails.lastName? <h2>{personalDetails.lastName.toUpperCase()}</h2> : null)}
         </div>
-        <div className='cv-personal-details-container'>
+        <div className='cv__personal-details'>
           {(personalDetails.jobTitle ? <h3>{personalDetails.jobTitle}</h3> : null)}
           {(personalDetails.address ? <p>{addressLine1}</p> : null)}
           {(personalDetails.city ? <p>{addressLine2}</p> : null)}

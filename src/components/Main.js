@@ -47,6 +47,9 @@ class Main extends Component {
   }
 
   handleAddWorkExperience = (e) => {
+    // const workExperienceCopy = this.state.workExperience;
+    // workExperienceCopy.sort((a, b) => (new Date(a.startDate)) - (new Date(b.startDate)))
+
     this.setState((prevState) => ({
       workExperience: [{
         id: Date.now().toString(),
@@ -58,7 +61,7 @@ class Main extends Component {
         city:'',
         country:'',
         description: '',
-      }, ...prevState.workExperience],
+      }, ...prevState.workExperience.sort((a, b) => (new Date(b.startDate)) - (new Date(a.startDate)))],
     }))
   }
 
@@ -126,7 +129,7 @@ class Main extends Component {
   
   render() {
     return (
-      <div className="content-container">
+      <div className="container__main">
         <FormsContainer 
           handlePersonalDetailsChange={this.handlePersonalDetailsChange} 
           personalDetails={this.state.personalDetails}
@@ -141,7 +144,11 @@ class Main extends Component {
           handleDeleteEducation={this.handleDeleteEducation}
           handleShowEducation={this.handleShowEducation}
         />
-        <PreviewContainer personalDetails={this.state.personalDetails} />
+        <PreviewContainer 
+          personalDetails={this.state.personalDetails}
+          workExperience={this.state.workExperience}
+          education={this.state.education}
+       />
       </div>
     )
   }
